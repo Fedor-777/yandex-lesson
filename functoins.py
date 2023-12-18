@@ -31,6 +31,9 @@ def load_image(name, colorkey=None, size=None):
 
 def load_level(filename):
     filename = "data/" + filename
+    if not os.path.isfile(filename):
+        print(f"Файл с изображением '{filename}' не найден")
+        sys.exit()
     # читаем уровень, убирая символы перевода строки
     with open(filename, 'r') as mapFile:
         level_map = [line.strip() for line in mapFile]

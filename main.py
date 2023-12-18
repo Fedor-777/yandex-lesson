@@ -1,6 +1,7 @@
 from functoins import load_level, generate_level, move
 from start import *
 
+level_map = load_level(input("Введите имя файла: "))
 # Инициализируем игру
 pygame.init()
 screen = pygame.display.set_mode(SIZE)
@@ -15,7 +16,6 @@ tile_images = {
     'empty': load_image('grass.png')
 }
 player_image = load_image('mar.png')
-level_map = load_level("map.map")
 
 # создаем  player
 player = generate_level(level_map, tile_group, hero_group, tile_images, player_image)
